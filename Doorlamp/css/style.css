@@ -1,0 +1,52 @@
+.main-header {
+font-size: 40px;
+text-align: center;
+font-family: 'Courier New', Courier, monospace;
+color:white;
+}
+#box-1 {
+background-color:white;
+padding: 20px;
+}
+.sec-header {
+    color:white
+}
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(17, 17, 17);
+    padding: 30px;
+    color:white;
+    text-align:center ;
+}
+button {
+    padding: 15px 20px;
+    border: none;
+    background-color:white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    cursor: pointer;
+}
+button:hover {
+    transition: .2s;
+    padding-bottom: 10px;
+    padding-right: 25px;
+    padding-left: 25px;
+    border-radius: 5px;
+}
+.sex {
+    color:black
+}
+.article {
+margin-left: 10%;
+margin-right: 10%;
+font-family: 'Courier New', Courier, monospace;
+background-color: white;
+color:black;
+padding: 30px;
+font-size: large;
+}
+.body-gallery {
+    text-align: left;
+   margin-left: 30%;
+   margin-right: 30%;
+}
