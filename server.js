@@ -51,6 +51,12 @@ app.get('/articles/all', (req, res) => {
     );
 });
 
+app.get('/articles/latest', (req, res) => {
+  
+  res.send("galleryFiles");
+
+});
+
 app.get('/articles/:filename', (req, res) => {
   const name = req.params.filename;
   var article_dir = "public/articles"

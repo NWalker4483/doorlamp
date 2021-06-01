@@ -34,16 +34,12 @@ const router = new VueRouter({
   routes // short for `routes: routes`
 })
 
-import VueMarkdown from 'vue-markdown'
-
 // 4. Create and mount the root instance.
 // Make sure to inject the router with the router option to make the
 // whole app router-aware.
 new Vue({
   render: h => h(App),
-  components: {
-    VueMarkdown
-  },
+  
   router
 }).$mount('#app')
 

@@ -28,7 +28,7 @@ export default {
   methods: {
     async getGalleryEnries() {
       // Use the eventService to call the getEventSingle() method
-      ApiService.getGalleryEnries(this.$route.params.id)
+      ApiService.getGalleryEnries()
       .then(
         (entries => {
           this.$set(this, "entries", entries);

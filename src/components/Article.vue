@@ -1,6 +1,6 @@
 <template>
 <div>
-  <vue-markdown>{{markdown}}</vue-markdown>
+    {{markdown}}
 </div>
 </template>
 
