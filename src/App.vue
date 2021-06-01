@@ -1,6 +1,6 @@
 <template>
   <div>
-    <headbar msg="Welcome to Your Vue.js App" />
+    <headbar></headbar>
 
     <!-- route outlet -->
     <!-- component matched by the route will render here -->
@@ -21,17 +21,12 @@ import headbar from "./components/headbar.vue";
 export default {
   name: "App",
   components: {
-    headbar,
+    headbar
   },
 };
 </script>
 
 <style>
-
-#box-1 {
-  background-color: white;
-  padding: 20px;
-}
 .sec-header {
   color: white;
 }
@@ -42,6 +37,7 @@ body {
   color: white;
   text-align: center;
 }
+
 button {
   padding: 15px 20px;
   border: none;

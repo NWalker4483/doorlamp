@@ -11,7 +11,7 @@ export default {
   data() {
     // NEW - initialize the event object
     return {
-      articles: {}
+      Articles: {}
     }
   },  
   created() {
@@ -23,8 +23,8 @@ export default {
       // Use the eventService to call the getEventSingle() method
       ApiService.getArticleEntries()
       .then(
-        (articles => {
-          this.$set(this, "articles", articles);
+        (Articles => {
+          this.$set(this, "Articles", Articles);
         }).bind(this)
       );
     }

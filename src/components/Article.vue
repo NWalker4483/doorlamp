@@ -1,19 +1,20 @@
 <template>
 <div>
   <p>
-      Article text will be rendered here 
+      <vue-markdown>{{markdown}}</vue-markdown>
   </p>
 </div>
 </template>
 
 <script>
 export default {
-  name: 'article',
+  name: 'Article',
   props: ["text"],
   data: function () {
   return {
-    article: this.text
+    markdown: this.text
   }
+}
 }
 
 </script>

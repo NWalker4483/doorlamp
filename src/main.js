@@ -14,7 +14,7 @@ import Gallery from './components/Gallery.vue'
 import Home from './components/Home.vue'
 import About from './components/About.vue'
 import Archive from './components/Archive.vue'
-
+ 
 // 2. Define some routes
 // Each route should map to a component. The "component" can
 // either be an actual component constructor created via
@@ -34,11 +34,16 @@ const router = new VueRouter({
   routes // short for `routes: routes`
 })
 
+import VueMarkdown from 'vue-markdown'
+
 // 4. Create and mount the root instance.
 // Make sure to inject the router with the router option to make the
 // whole app router-aware.
 new Vue({
   render: h => h(App),
+  components: {
+    VueMarkdown
+  },
   router
 }).$mount('#app')
 

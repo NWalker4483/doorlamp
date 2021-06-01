@@ -7,7 +7,6 @@
         {{entry.description}}
     </p>
       </div>
-
     </div>
 </template>
 
