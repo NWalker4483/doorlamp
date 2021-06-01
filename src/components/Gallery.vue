@@ -1,18 +1,19 @@
 <template>
     <div>
-        <br>
-    <img src="/gallery/chair.jpeg" alt="Desk in an abandoned building">
+      <div v-for="entry in entries" :key="entry.filename">
+    <br>
+    <img v-bind:src="'/gallery/' + entry.filename"/> 
     <p class="body-gallery">
-        Door: How is there internet and a computer but no floor? <br><br>
-        Lamp: There's no need. It'd be a waste of money. <br><br>
-        Door: It's simple priorities <br><br>
-        Lamp: No, just your priorities. Who would want<br>to stand
-        on the floor when they can surf on the web?
+        {{entry.description}}
     </p>
+      </div>
+
     </div>
 </template>
 
 <script>
+
+import ApiService from '@/services/ApiService.js';
 export default {
   name: 'Gallery',
   data() {
@@ -41,5 +42,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.body-gallery {
+  text-align: left;
+  margin-left: 30%;
+  margin-right: 30%;
+}
 </style>

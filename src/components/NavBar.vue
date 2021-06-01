@@ -1,5 +1,5 @@
 <template>
-   <header class="main-header" id="headerMain">
+   <header class="main-header">
         <div>
             <h1>Doorlamp</h1>
             <router-link to="/">
@@ -33,4 +33,13 @@ export default {
   name: 'NavBar',
 }
 </script>
+
+<style scoped>
+.main-header {
+  font-size: 40px;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+}
+</style>
 

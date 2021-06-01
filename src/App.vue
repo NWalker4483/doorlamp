@@ -27,12 +27,7 @@ export default {
 </script>
 
 <style>
-.main-header {
-  font-size: 40px;
-  text-align: center;
-  font-family: "Courier New", Courier, monospace;
-  color: white;
-}
+
 #box-1 {
   background-color: white;
   padding: 20px;
@@ -64,19 +59,5 @@ button:hover {
 }
 .sex {
   color: black;
-}
-.article {
-  margin-left: 10%;
-  margin-right: 10%;
-  font-family: "Courier New", Courier, monospace;
-  background-color: white;
-  color: black;
-  padding: 30px;
-  font-size: large;
-}
-.body-gallery {
-  text-align: left;
-  margin-left: 30%;
-  margin-right: 30%;
 }
 </style>

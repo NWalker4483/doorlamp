@@ -1,7 +1,7 @@
 import axios from "axios"
 
 export default {
-  async getEvents() {
+  async getData() {
     let res = await axios.get("http://localhost:8000/events");
     return res.data;
   },
@@ -11,13 +11,13 @@ export default {
     return res.data;
   },
 
-  async getEvents() {
-    let res = await axios.get("http://localhost:8000/events");
+  async getGalleryEnries() {
+    let res = await axios.get("http://localhost:3000/gallery");
     return res.data;
   },
   
-  async getEventSingle(eventId) {
-    let res = await axios.get("http://localhost:8000/events/" + eventId);
+  async getArticleEntries() {
+    let res = await axios.get("http://localhost:8000/events");
     return res.data;
   }
 }

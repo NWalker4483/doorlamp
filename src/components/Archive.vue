@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
 import ApiService from '@/services/ApiService.js';
 export default {
   name: 'Archive', 
@@ -33,3 +32,14 @@ export default {
 }
 </script>
 
+<style scoped>
+.article {
+  margin-left: 10%;
+  margin-right: 10%;
+  font-family: "Courier New", Courier, monospace;
+  background-color: white;
+  color: black;
+  padding: 30px;
+  font-size: large;
+}
+</style>
