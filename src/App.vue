@@ -1,17 +1,22 @@
 <template>
-  <div>
+  <div id="app">
     <headbar></headbar>
-
+  <div class="content">
     <!-- route outlet -->
     <!-- component matched by the route will render here -->
     <router-view></router-view>
-    <footer>
-      <hr />
+  </div>
+
+  <footer class="footer">
+        <hr />
       <hr />
       <p>Enter your email to recive post notifications</p>
       <button type="submit">submit</button>
       <input type="text" name="email" id="email" />
-    </footer>
+  </footer>
+
+
+  
   </div>
 </template>
 
@@ -27,9 +32,6 @@ export default {
 </script>
 
 <style>
-.sec-header {
-  color: white;
-}
 body {
   font-family: "Courier New", Courier, monospace;
   background-color: rgb(17, 17, 17);
@@ -38,22 +40,30 @@ body {
   text-align: center;
 }
 
-button {
-  padding: 15px 20px;
-  border: none;
-  background-color: white;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 30px;
-  cursor: pointer;
+html, body {
+  height: 100%;
 }
-button:hover {
-  transition: 0.2s;
-  padding-bottom: 10px;
-  padding-right: 25px;
-  padding-left: 25px;
-  border-radius: 5px;
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
-.sex {
-  color: black;
+
+.content {
+  flex: 1 0 auto;
+  /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+  padding: 20px;
 }
+
+.footer {
+  flex-shrink: 0;
+  /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+  padding: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 </style>

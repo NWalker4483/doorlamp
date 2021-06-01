@@ -31,5 +31,22 @@ export default {
   font-family: "Courier New", Courier, monospace;
   color: white;
 }
+
+button {
+  padding: 15px 20px;
+  border: none;
+  background-color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+button:hover {
+  transition: 0.2s;
+  padding-bottom: 10px;
+  padding-right: 25px;
+  padding-left: 25px;
+  border-radius: 5px;
+}
 </style>
 
