@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavBar msg="Welcome to Your Vue.js App" />
+    <headbar msg="Welcome to Your Vue.js App" />
 
     <!-- route outlet -->
     <!-- component matched by the route will render here -->
@@ -16,12 +16,12 @@
 </template>
 
 <script>
-import NavBar from "./components/NavBar.vue";
+import headbar from "./components/headbar.vue";
 
 export default {
   name: "App",
   components: {
-    NavBar,
+    headbar,
   },
 };
 </script>

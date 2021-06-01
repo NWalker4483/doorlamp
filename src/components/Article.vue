@@ -1,15 +1,21 @@
 <template>
 <div>
   <p>
-      The about page goes here. If I was interesting it wouldn't be empty.
+      Article text will be rendered here 
   </p>
 </div>
 </template>
 
 <script>
 export default {
-  name: 'Article',
+  name: 'article',
+  props: ["text"],
+  data: function () {
+  return {
+    article: this.text
+  }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

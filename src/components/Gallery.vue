@@ -2,7 +2,7 @@
     <div>
       <div v-for="entry in entries" :key="entry.filename">
     <br>
-    <img v-bind:src="'/gallery/' + entry.filename"/> 
+    <img v-bind:src="'/gallery/images/' + entry.filename"/> 
     <p class="body-gallery">
         {{entry.description}}
     </p>

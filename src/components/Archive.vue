@@ -21,7 +21,7 @@ export default {
   methods: {
     async getArticleData() {
       // Use the eventService to call the getEventSingle() method
-      ApiService.getEventSingle(this.$route.params.id)
+      ApiService.getArticleEntries()
       .then(
         (articles => {
           this.$set(this, "articles", articles);

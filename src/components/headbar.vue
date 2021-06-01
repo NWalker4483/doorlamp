@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: 'NavBar',
+  name: 'headbar',
 }
 </script>
 
@@ -41,5 +41,6 @@ export default {
   font-family: "Courier New", Courier, monospace;
   color: white;
 }
+
 </style>
 
