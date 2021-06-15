@@ -2,7 +2,8 @@
   <div>
     <p>This website is to store my ideas about things I find interesting.</p>
     <h1>this week's essay</h1>
-    <div class="article">{{latest}}</div>
+    <h1>{{latest.title}}:</h1><h4>{{latest.date}}</h4>
+    <div class="article">{{latest.content}}</div>
   </div>
 </template>
 
@@ -10,7 +11,7 @@
 import ApiService from "@/services/ApiService.js";
 export default {
   components: { },
-  name: "Home",
+  name: "HomePage",
   created() {
     ApiService.getLatestArticle().then((response) => {
       this.latest = response.data;

@@ -8,12 +8,15 @@ const fs = require('fs');
 const app = express();
 const port = 3000;
 
+const article_dir = "public/articles"
+
+const gallery_dir = "public/gallery/descriptions"
+
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/gallery/all', (req, res) => {
-  var gallery_dir = "public/gallery/descriptions"
   fs.promises.readdir(
     path.resolve(__dirname, gallery_dir)).then((files) => {
       let galleryFiles = []
@@ -39,13 +42,10 @@ app.get('/gallery/:id', (req, res) => {
 });
 
 app.get('/articles/all', (req, res) => {
-  var article_dir = "public/articles"
   fs.promises.readdir(
     path.resolve(__dirname, article_dir)).then((files) => {
       let galleryFiles = []
       for (let file of files) {
-        // var filename = fullPath.replace(/^.*[\\\/]/, '')
-        // path.resolve(__dirname, article_dir, file)
         let data = {
           title: file.split(".")[0],
           date: Date.parse(file.split(".")[1]),
@@ -59,7 +59,11 @@ app.get('/articles/all', (req, res) => {
 });
 
 app.get('/articles/latest', (req, res) => {
-  res.send("galleryFiles");
+  res.send({
+    title: "Test Article",
+    date: Date.parse("6-23-21"),
+    content: "<h2>Loaded</h2>"
+  });
 });
 
 app.get('/articles/:filename', (req, res) => {

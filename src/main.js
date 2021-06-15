@@ -9,21 +9,20 @@ Vue.use(VueRouter)
 
 // 1. Define route components.
 // These can be imported from other files
-
 import GalleryPage from './components/GalleryPage.vue'
-import Home from './components/Home.vue'
-import About from './components/About.vue'
+import HomePage from './components/HomePage.vue'
+import AboutPage from './components/AboutPage.vue'
 import ArchivePage from './components/ArchivePage.vue'
- 
+
 // 2. Define some routes
 // Each route should map to a component. The "component" can
 // either be an actual component constructor created via
 // `Vue.extend()`, or just a component options object.
 // We'll talk about nested routes later.
 const routes = [
-  { path: '/', component: Home},
+  { path: '/', component: HomePage},
   { path: '/gallery', component: GalleryPage},
-  { path: '/about', component: About},
+  { path: '/about', component: AboutPage},
   { path: '/archive', component: ArchivePage},
 ]
 
@@ -31,7 +30,7 @@ const routes = [
 // You can pass in additional options here, but let's
 // keep it simple for now.
 const router = new VueRouter({
-  routes // short for `routes: routes`
+  routes: routes // short for `routes: routes`
 })
 
 // 4. Create and mount the root instance.
@@ -39,7 +38,6 @@ const router = new VueRouter({
 // whole app router-aware.
 new Vue({
   render: h => h(App),
-  
   router
 }).$mount('#app')
 
