@@ -2,37 +2,28 @@
   <div>
     <p>This website is to store my ideas about things I find interesting.</p>
     <h1>this week's essay</h1>
-    <Article v-bind:text="latest"></Article>
-    
+    <div class="article">{{latest}}</div>
   </div>
 </template>
 
 <script>
-import ApiService from '@/services/ApiService.js';
-import Article from './Article';
+import ApiService from "@/services/ApiService.js";
 export default {
-  components: { Article },
+  components: { },
   name: "Home",
-  mounted(){
-        // Use the eventService to call the getEventSingle() method
-      ApiService.getLatestArticle()
-      .then(
-        (latest => {
-           this.$set(this, "latest", latest);
-          console.log(latest);
-        }).bind(this)
-      );
+  created() {
+    ApiService.getLatestArticle().then((response) => {
+      this.latest = response.data;
+    });
   },
-
-   data() {
+  data() {
     return {
-      latest: "Failed to Load",
+      latest: {},
     };
-  }
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>

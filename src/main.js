@@ -10,10 +10,10 @@ Vue.use(VueRouter)
 // 1. Define route components.
 // These can be imported from other files
 
-import Gallery from './components/Gallery.vue'
+import GalleryPage from './components/GalleryPage.vue'
 import Home from './components/Home.vue'
 import About from './components/About.vue'
-import Archive from './components/Archive.vue'
+import ArchivePage from './components/ArchivePage.vue'
  
 // 2. Define some routes
 // Each route should map to a component. The "component" can
@@ -22,9 +22,9 @@ import Archive from './components/Archive.vue'
 // We'll talk about nested routes later.
 const routes = [
   { path: '/', component: Home},
-  { path: '/gallery', component: Gallery},
+  { path: '/gallery', component: GalleryPage},
   { path: '/about', component: About},
-  { path: '/archive', component: Archive},
+  { path: '/archive', component: ArchivePage},
 ]
 
 // 3. Create the router instance and pass the `routes` option

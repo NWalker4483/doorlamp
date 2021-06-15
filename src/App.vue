@@ -66,4 +66,13 @@ html, body {
   box-sizing: border-box;
 }
 
+div.article {
+  margin-left: 10%;
+  margin-right: 10%;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+  padding: 30px;
+  font-size: large;
+}
+
 </style>

@@ -1,23 +1,19 @@
 import axios from "axios"
 
 export default {
-  async getGalleryEnries() {
-    let res = await axios.get("http://localhost:3000/gallery/all");
-    return res.data;
+  getGalleryEntries() {
+    return axios.get("http://localhost:3000/gallery/all");
   },
   
-  async getArticleEntries() {
-    let res = await axios.get("http://localhost:3000/articles/all");
-    return res.data;
+  getArticleEntries() {
+    return axios.get("http://localhost:3000/articles/all"); 
   },
 
-  async getLatestArticle() {
-    let res = await axios.get("http://localhost:3000/articles/latest");
-    return res.data;
+  getLatestArticle() {
+    return axios.get("http://localhost:3000/articles/latest");
   },
-  async getArticle(eventId) {
-    let res = await axios.get("http://localhost:3000/articles/" + eventId);
-    return res.data;
+
+  getArticle(filename) {
+    return axios.get("http://localhost:3000/articles/" + filename);
   }
-
 }

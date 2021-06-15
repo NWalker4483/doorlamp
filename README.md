@@ -20,5 +20,21 @@ npm run build
 npm run lint
 ```
 
+### Uploading Articles
+{
+    "time": "12:00",
+    "filename": "chair.jpeg",
+    "description": "Cats are Dope" 
+}
+
+### Uploading Gallery Entries
+
+``` json
+{
+    "time": "12:00",
+    "filename": "chair.jpeg",
+    "description": "Cats are Dope" 
+}
+```
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

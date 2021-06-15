@@ -44,7 +44,14 @@ app.get('/articles/all', (req, res) => {
     path.resolve(__dirname, article_dir)).then((files) => {
       let galleryFiles = []
       for (let file of files) {
-        galleryFiles.push(path.resolve(__dirname, article_dir, file));
+        // var filename = fullPath.replace(/^.*[\\\/]/, '')
+        // path.resolve(__dirname, article_dir, file)
+        let data = {
+          title: file.split(".")[0],
+          date: Date.parse(file.split(".")[1]),
+          content: "Not Loaded"
+        }
+        galleryFiles.push(data);
       }
       res.send(galleryFiles);
     }
@@ -52,9 +59,7 @@ app.get('/articles/all', (req, res) => {
 });
 
 app.get('/articles/latest', (req, res) => {
-  
   res.send("galleryFiles");
-
 });
 
 app.get('/articles/:filename', (req, res) => {
