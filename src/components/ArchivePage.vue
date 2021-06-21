@@ -1,8 +1,21 @@
 <template>
 <div>
+
+     <!-- <md-table v-model="Articles" md-card>
+      <md-table-toolbar>
+        <h1 class="md-title">Users</h1>
+      </md-table-toolbar>
+
+      <md-table-row slot="md-table-row" slot-scope="{ item }">
+        <md-table-cell md-label="ID" md-sort-by="id" md-numeric>{{ item.title }}</md-table-cell>
+        <md-table-cell md-label="Name" md-sort-by="name">{{ item.date }}</md-table-cell>
+        <md-table-cell md-label="Email" md-sort-by="email">{{ item.content }}</md-table-cell>
+      </md-table-row>
+    </md-table> -->
+
   <ul id="example-1">
   <li v-for="item in Articles" :key="item.message" @click="updateSelected(item)">
-    {{ item }}
+    {{ item.title }} | {{item.date | formatDate}}
   </li>
 </ul>
 </div>

@@ -3,6 +3,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
+// import VueMaterial from 'vue-material'
+// import 'vue-material/dist/vue-material.min.css'
+// import 'vue-material/dist/theme/default.css'
+
+// Vue.use(VueMaterial)
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
@@ -13,6 +18,14 @@ import GalleryPage from './components/GalleryPage.vue'
 import HomePage from './components/HomePage.vue'
 import AboutPage from './components/AboutPage.vue'
 import ArchivePage from './components/ArchivePage.vue'
+
+import moment from 'moment'
+
+Vue.filter('formatDate', function(value) {
+  if (value) {
+    return moment(String(value)).format('MM/DD/YYYY hh:mm')
+  }
+})
 
 // 2. Define some routes
 // Each route should map to a component. The "component" can

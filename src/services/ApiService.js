@@ -12,5 +12,8 @@ export default {
   },
   getArticle(filename) {
     return axios.get("http://localhost:3000/articles/" + filename);
-  }
+  },
+  // appendEmailList(email){
+  //   return axios.get("http://localhost:3000/email/" + filename);
+  // }
 }

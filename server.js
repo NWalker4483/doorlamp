@@ -41,43 +41,46 @@ app.get('/gallery/:id', (req, res) => {
     );
 });
 
-app.get('/articles/all', (req, res) => {
+loadArticles = function () {
+  return new Promise((resolve, reject) => {
   fs.promises.readdir(
     path.resolve(__dirname, article_dir)).then((files) => {
       let galleryFiles = []
       for (let file of files) {
         let data = {
           title: file.split(".")[0],
-          date: Date.parse(file.split(".")[1]),
-          content: "Not Loaded"
+          date: new Date(file.split(".")[1]),
+          content: null,
+          filename: file
         }
         galleryFiles.push(data);
       }
-      res.send(galleryFiles);
+      resolve(galleryFiles);
     }
     );
+})}
+
+loadArticlesContent = function (article_json) {
+
+}
+
+app.get('/articles/all', (req, res) => {
+  loadArticles().then(articles => res.send(articles));
 });
 
+function custom_sort(a, b) {
+  return new Date(a.date).getTime() - new Date(b.date).getTime();
+}
+
 app.get('/articles/latest', (req, res) => {
-  res.send({
-    title: "Test Article",
-    date: Date.parse("6-23-21"),
-    content: "<h2>Loaded</h2>"
-  });
+  loadArticles().then(articles => res.send(
+    articles.sort(custom_sort)[0]));
 });
 
 app.get('/articles/:filename', (req, res) => {
   const name = req.params.filename;
   var article_dir = "public/articles"
-  fs.promises.readdir(
-    path.resolve(__dirname, article_dir)).then((files) => {
-      let galleryFiles = []
-      for (let file of files) {
-        galleryFiles.push(require(path.resolve(__dirname, article_dir, file)));
-      }
-      res.send("galleryFiles");
-    }
-    );
+  fetch(path.resolve(__dirname, article_dir, filename))
 });
 
 // listen on the port
